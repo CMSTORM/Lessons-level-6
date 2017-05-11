@@ -4,42 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SmallestAndBiggest
+namespace Cards
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[5];
-            {
-                numbers[0] = int.Parse(Console.ReadLine());
-                numbers[1] = int.Parse(Console.ReadLine());
-                numbers[2] = int.Parse(Console.ReadLine());
-                numbers[3] = int.Parse(Console.ReadLine());
-                numbers[4] = int.Parse(Console.ReadLine());
-              
-            }
-            int biggest  = 0;
-            int smallest = 0;
-            foreach (int Bignum in numbers)
-                {
-                 if (Bignum > biggest)
-                    {
-                        biggest = Bignum;
-                    }
-                }
-            smallest = biggest;
-            foreach (int smallnum in numbers)
-            {
-                
-                if (smallest > smallnum)
-                {
-                    smallest = smallnum;
-                }
-            }
+            string[] cards = new string[13];
+            cards[0] = "Ace";
+            cards[1] = "two";
+            cards[2] = "three";
+            cards[3] = "four";
+            cards[4] = "five";
+            cards[5] = "six";
+            cards[6] = "seven";
+            cards[7] = "eight";
+            cards[8] = "nine";
+            cards[9] = "ten";
+            cards[10] = "jack";
+            cards[11] = "queen";
+            cards[12] = "king";
 
-            Console.WriteLine("Biggest is: " + biggest);
-            Console.WriteLine("The smallest is: " + smallest);
+            string[] cardsType = new string[4];
+            cardsType[0] = "club";
+            cardsType[1] = "heart";
+            cardsType[2] = "diamods";
+            cardsType[3] = "spade";
+
+
+
+            for (int i = 0; i < cardsType.Length; i++)
+            {
+                for (int j = 0; j < cards.Length; j++)
+                {
+                    Console.WriteLine("{0,-10} of {1,10}" , cards[j],cardsType[i]);
+                }
+                Console.ReadLine();
+            }
         }
     }
 }
